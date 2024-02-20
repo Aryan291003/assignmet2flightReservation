@@ -1,0 +1,168 @@
+﻿@page "/reservations"
+
+@using MauiApp9.Data
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Create two equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        height: 350px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .myself .property {
+        width: 25%;
+        display: inline-block;
+        box-sizing: border-box;
+        text-align: right;
+    }
+
+    .myself .value {
+        text-align: left;
+        padding-left: 10px;
+        width: 70%;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+
+
+    .container {
+        position: relative;
+    }
+
+    .center {
+        position: absolute;
+        left: 50%;
+    }
+
+    .columnC {
+        float: left;
+        width: 100%;
+        padding: 10px;
+        height: 350px;
+    }
+
+    .myself .valueC {
+        text-align: left;
+        padding-left: 10px;
+        width: 70%;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+
+    .myself .propertyC {
+        width: 25%;
+        display: inline-block;
+        box-sizing: border-box;
+        text-align: right;
+    }
+</style>
+
+<div class="row">
+    <div class="column">
+        <div class="container">
+            <div class="center">
+                <h3>Reservations</h3>
+            </div>
+        </div>
+        <br /><br />
+        <div @onclick="SayHello" style="cursor: pointer;">Flight 1</div>
+        <div @onclick="SayHello" style="cursor: pointer;">Flight 2</div>
+    </div>
+    <div class="column myself">
+
+        <div class="container">
+            <div class="center">
+                <h3>Reserve</h3>
+            </div>
+        </div>
+        <br /><br />
+        <label class="property" for="explicit-label-name">Code: </label>
+        <input class="value" type="text" id="explicit-label-name" name="code" />
+        <br />
+        <label class="property" for="explicit-label-name">Flight: </label>
+        <input class="value" type="text" id="explicit-label-airline" name="flight" />
+        <br />
+
+        <label class="property" for="explicit-label-name">Airline: </label>
+        <input class="value" type="text" id="explicit-label-day" name="airline" />
+        <br />
+        <label class="property" for="explicit-label-name">Cost: </label>
+        <input class="value" type="text" id="explicit-label-time" name="cost" />
+        <br />
+        <label class="property" for="explicit-label-name">Name: </label>
+        <input class="value" type="text" id="explicit-label-name" name="name" />
+        <br />
+        <label class="property" for="explicit-label-name">Citizenship: </label>
+        <input class="value" type="text" id="explicit-label-citizenship" name="name" />
+        <br />
+        <label class="propertyC" for="explicit-label-name">Status: </label>
+        <select class="valueC" name="cars" id="cars">
+            <option value="active">Active</option>
+            <option value="nonActive">Non Active</option>
+        </select>
+        <br /> <br />
+        <div class="container">
+            <div class="center">
+                <button class="btn btn-primary" @onclick="IncrementCount">Reserve</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="columnC myself">
+
+
+        <div class="container">
+            <div class="center">
+                <h3>Search</h3>
+            </div>
+        </div>
+        <br /><br />
+        <label class="propertyC" for="explicit-label-name">Code: </label>
+        <input class="value" type="text" id="code" name="code" />
+        <br />
+        <label class="propertyC" for="explicit-label-name">Airline: </label>
+        <input class="value" type="text" id="airline" name="airline" />
+
+        <br />
+
+        <label class="propertyC" for="explicit-label-name">Name: </label>
+        <input class="value" type="text" id="name" name="name" />
+        <br /><br />
+        <div class="container">
+            <div class="center">
+                <button class="btn btn-primary form-control" @onclick="IncrementCount">Find reservations</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+    private void SayHello()
+    {
+
+    }
+}
